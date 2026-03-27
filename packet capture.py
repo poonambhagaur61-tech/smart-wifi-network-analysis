@@ -5,3 +5,7 @@ def packet_callback(packet):
 
 # Capture packets
 sniff(prn=packet_callback, count=10)
+import psutil
+
+data = psutil.net_io_counters()
+print(data.bytes_sent, data.bytes_recv)
